@@ -8,16 +8,12 @@ def gamma_trans(img, gamma):  # gamma函数处理
     gamma_table = np.round(np.array(gamma_table)).astype(np.uint8)  # 颜色值为整数
     return cv2.LUT(img, gamma_table)  # 图片颜色查表。另外可以根据光强（颜色）均匀化原则设计自适应算法。
 
-def nothing(x):
-    pass
-
 cv2.namedWindow("demo", 0)  # 将显示窗口的大小适应于显示器的分辨率
-cv2.createTrackbar('Value of Gamma', 'demo', 100, 1000, nothing)  # 使用滑动条动态调节参数gamma
+cv2.createTrackbar('Value of Gamma', 'demo', 100, 1000, lambda x:x)  # 使用滑动条动态调节参数gamma
 
 data_base_dir = "1111"
 outfile_dir = "1"
 processed_imgnumber = 0
-print("press enter to make sure your operation and process the next picture")
 
 for file in os.listdir(data_base_dir):
     read_img_name = data_base_dir + '//' + file.strip()
