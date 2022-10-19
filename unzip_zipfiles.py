@@ -110,3 +110,29 @@ if __name__ == '__main__':
     rem_dir_extra(os.path.split(parent_path)[0], os.path.split(parent_path)[1])
 
     print("解压完成啦！！！！")
+
+    
+    
+#将解压后的文件整合到一个文件夹下
+for root, dirs, files in os.walk("G:\\2222"):
+    for fileName in files:
+        try:
+            #shutil.move(root+'/'+fileName,"G:\\333")
+            shutil.copy(root+'/'+fileName,"G:\\333")
+        except Exception as error:
+            print("{}移动失败".format(fileName))
+print("-------------文件移动成功-------------")
+
+
+for root, dirs, files in os.walk("G:\\333"):
+    count=1
+    for fileName in files:
+        try:
+            # # 获取图片前缀
+            # fileNameInitial=fileName.split('.jpg')[0]
+            shutil.copy(root+'/'+fileName,root+"/{}.jpg".format(count))
+            #shutil.move(root+'/'+fileName,root+"/{}.jpg".format(count))
+            count=count+1
+        except Exception as error:
+            print("{}重命名失败".format(fileName))
+print("-------------文件夹里的图片重命名成功-------------")
