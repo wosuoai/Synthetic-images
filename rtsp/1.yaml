@@ -1,0 +1,36 @@
+merchant1:
+  cap1:
+    shopid: 
+    user: ''
+    password: ''
+    ip: ''
+    port: ''
+
+  cap2:
+    shopid: 
+    user: ''
+    password: ''
+    ip: ''
+    port: ''
+
+  cap3:
+    shopid: 
+    user: ''
+    password: ''
+    ip: ''
+    port: ''
+
+  cap4:
+    shopid: 
+    user: ''
+    password: ''
+    ip: ''
+    port: ''
+
+#merchant2:
+#  cap3:
+#    shopid: 
+#    user: ''
+#    password: ''
+#    ip: ''
+#    port: ''
